@@ -136,7 +136,7 @@ function wc_nav_menu_items( $items ) {
 				$path  = wp_parse_url( $item->url, PHP_URL_PATH );
 				$query = wp_parse_url( $item->url, PHP_URL_QUERY );
 
-				if ( strstr( $path, $customer_logout ) || strstr( $query, $customer_logout ) ) {
+				if ( strstr( (string)$path, (string)$customer_logout ) || strstr( (string)$query, (string)$customer_logout ) ) {
 					unset( $items[ $key ] );
 				}
 			}
